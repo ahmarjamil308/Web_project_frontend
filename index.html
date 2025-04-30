@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/navigation bar logo.jpg" alt="Work Online Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">My Menu</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">About</a></li><br>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="disabled">Disabled</a></li>
+                </ul>
+            </nav>
+            <div class="buttons">
+                <button onclick="login()">Login</button>
+                <button onclick="joinUs()">Join Us</button>
+                <button onclick="buyerSignUp()">Buyer Sign Up</button>
+                <button onclick="buyerSignIn()">Buyer Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Work Online</h1>
+            <p>Skill Empowerment</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="chat-icon">
+            <span>We Are Here!</span>
+            <img src="images/images.png" alt="Chat Icon">
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

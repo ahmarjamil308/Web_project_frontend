@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            text-align: center;
+        }
+
+        .join-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .join-container h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .join-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .join-container input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .join-container button {
+            padding: 10px;
+            background: #ff7f50;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .join-container button:hover {
+            background: #e06d42;
+        }
+
+        .join-container .back-link {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .join-container .back-link:hover {
+            color: #fff;
+        }
+
+        .confirmation-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="join-container">
+        <h1>Join Us</h1>
+        <form id="joinForm" onsubmit="handleJoin(event)">
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Join</button>
+        </form>
+        <a href="index.html" class="back-link">&#8592; Back to Home</a>
+
+        <!-- Hidden confirmation message -->
+        <div id="confirmationMessage" class="confirmation-message">
+            Thank you for joining us! You will receive a confirmation email soon.
+        </div>
+    </div>
+
+    <script>
+        function handleJoin(event) {
+            event.preventDefault(); // Prevent form submission and page reload
+
+            // Get values from input fields
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Basic validation check (ensure fields are not empty)
+            if (!fullName || !email || !password) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // If validation passes, reset form and show confirmation message
+            document.getElementById('joinForm').reset(); // Reset form fields
+            showConfirmationMessage(); // Display confirmation message
+        }
+
+        function showConfirmationMessage() {
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            confirmationMessage.style.display = 'block'; // Make confirmation message visible
+        }
+    </script>
+</body>
+</html>

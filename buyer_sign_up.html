@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Sign Up</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff7f50;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: block;
+            color: #fff;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+            margin-top: 5px;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border: 2px solid #ff7f50;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff7f50;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e06d42;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .back-link a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Buyer Sign Up</h1>
+
+        <form id="signUpForm" onsubmit="handleSignUp(event)">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <div class="back-link">
+            <p><a href="index.html">Back to Home</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function handleSignUp(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Placeholder for sign-up logic
+            if (name && email && password) {
+                alert("Sign Up Successful!\nName: " + name + "\nEmail: " + email);
+                window.location.href = "buyer-sign-in.html"; // Redirect to sign-in page after successful sign-up
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+
+</body>
+</html>
